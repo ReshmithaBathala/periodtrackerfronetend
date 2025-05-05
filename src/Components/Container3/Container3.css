@@ -1,0 +1,49 @@
+.container3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.feature-button {
+  width: 180px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-button:hover {
+  transform: translateY(-4px);
+  background-color: #f9f9f9;
+}
+
+.feature-button img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+.feature-button h3 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 1rem;
+}
+
+.feature-button p {
+  font-size: 0.9rem;
+  color: #555;
+}
+.feature-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-button:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}

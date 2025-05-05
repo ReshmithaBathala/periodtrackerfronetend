@@ -1,0 +1,27 @@
+.add-symptoms-page {
+  padding: 20px;
+}
+
+.add-symptoms-page select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.add-symptoms-page label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-symptoms-page button {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.add-symptoms-page button:hover {
+  background-color: #45a049;
+}

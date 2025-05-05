@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+}
+
+/* Container Styles */
+.cycle-tracker-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+button {
+  background-color: #0066cc;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+.back-button {
+  align-self: flex-start;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.view-all-btn,
+.add-symptom-btn,
+.learn-more button {
+  background-color: #28a745;
+}
+
+.view-all-btn:hover,
+.add-symptom-btn:hover,
+.learn-more button:hover {
+  background-color: #218838;
+}
+
+/* Calendar Toggle */
+button.monthly-view-btn,
+button.log-period-btn {
+  background-color: #17a2b8;
+}
+
+button.monthly-view-btn:hover,
+button.log-period-btn:hover {
+  background-color: #138496;
+}
+
+/* Next Period Section */
+.next-period {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff6600;
+  margin-top: 10px;
+}
+
+/* Symptoms Section */
+.symptom-list {
+  list-style: none;
+  padding: 0;
+}
+
+.symptom-list div {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.add-symptom-btn {
+  background-color: #ff6600;
+}
+
+.add-symptom-btn:hover {
+  background-color: #cc5200;
+}
+
+/* Cycle Insights Section */
+.cycle-insights ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cycle-insights li {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+/* History Section */
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.history-list li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.history-list li span {
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cycle-tracker-page {
+    padding: 15px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 12px 0;
+  }
+
+  .back-button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .cycle-tracker-page {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+}

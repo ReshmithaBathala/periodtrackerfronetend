@@ -1,0 +1,27 @@
+.range-slider {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.day-value {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.back-btn,
+.next-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #6246ea;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
