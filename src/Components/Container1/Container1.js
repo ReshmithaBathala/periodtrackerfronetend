@@ -3,10 +3,11 @@ import "./Container1.css";
 
 const Container1 = () => (
   <div className="container1">
-    <h1>Track Your Menstrual Cycle with Ease</h1>
-    <p>
-      Log your period, track symptoms, and get smart insights about your cycle.
+    <h1>Empower Your Cycle Journey</h1>
+    <p className="subtitle">
+      Log, track, and understand your menstrual cycle with personalized insights
     </p>
+    <div className="decoration-circle"></div>
   </div>
 );
 

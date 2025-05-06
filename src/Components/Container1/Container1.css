@@ -1,13 +1,32 @@
 .container1 {
-  margin: 60px auto 40px;
+  text-align: center;
+  padding: 80px 20px 60px;
+  position: relative;
 }
 
 .container1 h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.container1 p {
-  font-size: 18px;
-  color: #555;
+.container1 .subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.decoration-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(255, 107, 157, 0.1);
+  top: -50px;
+  right: -50px;
+  z-index: -1;
 }

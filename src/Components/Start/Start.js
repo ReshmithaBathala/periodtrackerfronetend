@@ -10,14 +10,20 @@ const Start = () => {
   };
 
   return (
-    <button className="centered-button" onClick={handleClick}>
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/12260/12260600.png"
-        alt="Cycle"
-      />
-      <span className="text">Cycle</span>
-      <span className="arrow">&#8594;</span>
-    </button>
+    <div className="start-container">
+      <button className="centered-button" onClick={handleClick}>
+        <div className="button-content">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/12260/12260600.png"
+            alt="Cycle"
+            className="button-icon"
+          />
+          <span className="text">Cycle</span>
+          <span className="arrow">&#8594;</span>
+        </div>
+      </button>
+      <p className="welcome-text">Click to begin your journey</p>
+    </div>
   );
 };
 

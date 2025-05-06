@@ -25,8 +25,9 @@ const Problems = () => {
 
   const handleSelectProblem = (problem) => {
     setSelectedProblem(problem);
-    localStorage.setItem("condition", problem); // Save selected condition to localStorage
+    localStorage.setItem("condition", problem);
   };
+
   const handleSubmit = async () => {
     const payload = {
       periodLength: localStorage.getItem("periodLength"),
@@ -35,11 +36,14 @@ const Problems = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        "https://periodcyclebackend.onrender.com/api/submit",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) {
@@ -55,39 +59,106 @@ const Problems = () => {
   };
 
   return (
-    <div className="get-started-page">
-      <div className="top-bar">
-        <h2>Add Some Information</h2>
-        <button className="close-btn" onClick={() => navigate("/")}>
-          ❌
-        </button>
+    <div className="problems-page">
+      <div className="header-container">
+        {/* <button className="back-button" onClick={() => navigate("/last-days")}>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="#FF6B9D"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Back
+        </button> */}
       </div>
 
       <div className="content-container">
-        <Lottie animationData={problem} className="lottie" />
-        <h3>Any conditions affecting your cycle?</h3>
-        <p>Sharing helps your doctor care better.</p>
-
-        <div className="problems-container">
-          {problemsList.map((problem, index) => (
-            <div
-              key={index}
-              className={`problem-card ${
-                selectedProblem === problem ? "selected" : ""
-              }`}
-              onClick={() => handleSelectProblem(problem)}
-            >
-              {problem}
-            </div>
-          ))}
+        <div className="top-section">
+          <h2>Health Information</h2>
+          <p className="completion-text">Almost done!</p>
         </div>
 
-        <div className="button-row">
-          <button className="back-btn" onClick={() => navigate("/last-days")}>
-            ← Back
+        <div className="animation-container">
+          <Lottie
+            animationData={problem}
+            className="lottie-animation"
+            loop={true}
+          />
+        </div>
+
+        <div className="input-section">
+          <h3>Any conditions affecting your cycle?</h3>
+          <p className="hint-text">
+            Sharing helps your doctor provide better care
+          </p>
+
+          <div className="problems-grid">
+            {problemsList.map((problem, index) => (
+              <button
+                key={index}
+                className={`problem-card ${
+                  selectedProblem === problem ? "selected" : ""
+                }`}
+                onClick={() => handleSelectProblem(problem)}
+              >
+                {problem}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* <div className="button-container">
+         
+        </div> */}
+        <div className="button-group">
+          <button className="back-button" onClick={() => navigate("/")}>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="#FF6B9D"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Back
           </button>
-          <button className="next-btn" onClick={handleSubmit}>
-            Submit
+          <button
+            className="submit-button"
+            onClick={handleSubmit}
+            disabled={!selectedProblem}
+          >
+            Complete Setup
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12H19M19 12L12 5M19 12L12 19"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         </div>
       </div>

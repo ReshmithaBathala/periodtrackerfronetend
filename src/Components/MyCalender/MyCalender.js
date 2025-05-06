@@ -1,18 +1,34 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import "./MyCalendar.css"; // New custom styles
 
 function MyCalendar({ onDateSelect }) {
   const [date, setDate] = useState(new Date());
 
   const handleDateChange = (selectedDate) => {
-    setDate(selectedDate); // Update the local state
-    onDateSelect(selectedDate); // Send the selected date to the parent component
+    setDate(selectedDate);
+    onDateSelect(selectedDate);
   };
 
   return (
-    <div className="calendar-wrapper">
-      <Calendar onChange={handleDateChange} value={date} />
+    <div className="custom-calendar-container">
+      <Calendar
+        onChange={handleDateChange}
+        value={date}
+        calendarType="gregory"
+        className="custom-calendar"
+        tileClassName="custom-tile"
+        navigationLabel={({ date, view }) => (
+          <div className="custom-navigation-label">
+            {date.toLocaleString("default", { month: "long" })}{" "}
+            {date.getFullYear()}
+          </div>
+        )}
+        formatShortWeekday={(locale, date) =>
+          ["S", "M", "T", "W", "T", "F", "S"][date.getDay()]
+        }
+      />
     </div>
   );
 }

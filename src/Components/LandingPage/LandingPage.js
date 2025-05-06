@@ -9,19 +9,28 @@ const LandingPage = ({ onBack }) => {
   const navigate = useNavigate();
   return (
     <div className="landing-page">
-      <button className="back-button" onClick={onBack}>
+      <button className="back-button" onClick={() => navigate("/")}>
         &larr;
       </button>
-      <Container1 />
-      <Container2 />
-      <Container3 />
-      <p className="small-note">
-        Please note that your data stays private and secure. You can update or
-        delete it anytime
-      </p>
-      <button className="get-started" onClick={() => navigate("/get-started")}>
-        Get Started
-      </button>
+      <div className="gradient-background"></div>
+      <div className="content-wrapper">
+        <Container1 />
+        <Container2 />
+        <Container3 />
+        <div className="footer-section">
+          <p className="small-note">
+            Your data stays private and secure. You can update or delete it
+            anytime.
+          </p>
+          <button
+            className="get-started-button"
+            onClick={() => navigate("/get-started")}
+          >
+            Get Started
+            <span className="arrow-icon">→</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

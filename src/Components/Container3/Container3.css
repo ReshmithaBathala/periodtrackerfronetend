@@ -1,49 +1,97 @@
 .container3 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem auto;
-  max-width: 800px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.feature-button {
-  width: 180px;
-  background-color: #fff;
-  border: 2px solid #ddd;
-  border-radius: 20px;
-  padding: 1rem;
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  padding: 30px 25px;
+  border: 1px solid #f0e6ed;
+  border-radius: 12px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
 }
 
-.feature-button:hover {
-  transform: translateY(-4px);
-  background-color: #f9f9f9;
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9eb5, #ff6b9d);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
-.feature-button img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 0.5rem;
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: #ffd6e5;
 }
 
-.feature-button h3 {
-  margin: 0.5rem 0 0.3rem;
-  font-size: 1rem;
+.feature-card:hover::before {
+  transform: scaleX(1);
 }
 
-.feature-button p {
-  font-size: 0.9rem;
-  color: #555;
-}
-.feature-button {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.feature-icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: #fff5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 1px solid #ffe0ed;
 }
 
-.feature-button:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: hue-rotate(330deg) brightness(0.9);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 25px 20px;
+  }
 }
